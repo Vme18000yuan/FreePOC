@@ -17,5 +17,7 @@ Kingdee-EAS myUploadFile 任意文件上传漏洞
 用友GRP-U8 license_check.jsp sql注入漏洞
 用友upload.jsp 任意文件上传漏洞
 致远wpsAssistServlet 任意文件上传漏洞
+yonyou-u8-cloud-RegisterServlet-sql  用友u8-cloud RegisterServlet SQL注入
+entsoft_fileupload_jsp_file_upload.py  浙大恩特客户资源管理系统 fileupload.jsp 文件上传
 ```
 
