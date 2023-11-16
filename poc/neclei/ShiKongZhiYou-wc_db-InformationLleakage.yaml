@@ -1,0 +1,18 @@
+id: ShiKongZhiYou-wc_db-InformationLleakage
+
+info:
+  name: 时空智友企业流程化管控系统 wc.db 文件信息泄露漏洞
+  author: 帝国绝凶虎の理塘纯真丁一郎
+  severity: high
+
+requests:
+  - raw:
+      - |
+        GET /.svn/wc.db HTTP/1.1
+        Host: {{Hostname}}
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'

