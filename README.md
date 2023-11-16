@@ -17,8 +17,14 @@ Kingdee-EAS myUploadFile 任意文件上传漏洞
 用友GRP-U8 license_check.jsp sql注入漏洞
 用友upload.jsp 任意文件上传漏洞
 致远wpsAssistServlet 任意文件上传漏洞
-yonyou-u8-cloud-RegisterServlet-sql  用友u8-cloud RegisterServlet SQL注入
-entsoft_fileupload_jsp_file_upload.py  浙大恩特客户资源管理系统 fileupload.jsp 文件上传
+yonyou-u8-cloud-RegisterServlet-sql  用友u8-cloud RegisterServlet SQL注入漏洞
+entsoft_fileupload_jsp_file_upload.py  浙大恩特客户资源管理系统 fileupload.jsp 文件上传漏洞
 landray_oa_sysuicomponent_file_upload.py  蓝凌OA sysUiComponent 前台任意文件上传
+CellinxNVT-GetFileContent_cgi-F.yaml  Cellinx NVT 摄像机 GetFileContent.cgi 任意文件读取漏洞
+Fanwei-eoffice-InformationLleakage.yaml  泛微E-Office信息泄露漏洞(CVE-2023-2766)
+JinHeOA-OfficeServer-FileUpload.yaml   金和oa OfficeServer任意文件上传漏洞
+ShiKongZhiYou-wc_db-InformationLleakage.yaml  时空智友企业流程化管控系统 wc.db 文件信息泄露漏洞
+YongYouU8-cloud-RegisterServlet-sqli.yaml   用友u8-cloud RegisterServlet SQL注入漏洞
+ZheDaEnTe-fileupload_jsp-FileUpload.yaml    浙大恩特客户资源管理系统fileupload 任意文件上传漏洞
 ```
 
