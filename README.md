@@ -26,5 +26,7 @@ JinHeOA-OfficeServer-FileUpload.yaml   金和oa OfficeServer任意文件上传�
 ShiKongZhiYou-wc_db-InformationLleakage.yaml  时空智友企业流程化管控系统 wc.db 文件信息泄露漏洞
 YongYouU8-cloud-RegisterServlet-sqli.yaml   用友u8-cloud RegisterServlet SQL注入漏洞
 ZheDaEnTe-fileupload_jsp-FileUpload.yaml    浙大恩特客户资源管理系统fileupload 任意文件上传漏洞
+zhedaenkeMailActionUpload.py                浙大恩特客户资源管理系统MailAction 任意文件上传漏洞
+zhedaenkeeditAction_SQL.py                  浙大恩特客户资源管理系统editAction SQL注入漏洞
 ```
 
