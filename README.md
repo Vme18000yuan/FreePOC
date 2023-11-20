@@ -47,5 +47,10 @@ hongjing_app_check_in-get_org_tree-sql.py              宏景人力get_org_tree-
 jindieyun_ScpSupRegHandler_uploadfile.py               金蝶云星空管理中心_ScpSupRegHandler任意文件上传
 shikongzhiyou_formservice_uploadfile.py                时空智友企业流程化管控系统_formservice_文件上传漏洞
 宏景人力_servlet-codesettree_sql注入.py                宏景人力_servlet-codesettree_sql注入漏洞
+landray_oa_sysuicomponent_file_upload.py               蓝凌OA sysUiComponent 前台任意文件上传
+shikong_Login_Any_file_read.py                         时空智友_Login任意文件读取
+wangkangrce.py                                         网康下一代防火墙远程命令执行漏洞
+wangkang_rce.yaml                                      网康下一代防火墙远程命令执行漏洞
+
 ```
 
