@@ -43,14 +43,15 @@ zhedaenkeeditAction_SQL.py                             浙大恩特客户资源�
 致远OA_getSessionList.jsp_Session泄漏.py                致远OA_getSessionList.jsp_Session泄漏漏洞
 致远OA_webmail.do_任意文件下载.py                       致远OA_webmail.do_任意文件下载漏洞
 致远OA_帆软组件_ReportServer_目录遍历.py                致远OA_帆软组件_ReportServer_目录遍历漏洞
-hongjing_app_check_in-get_org_tree-sql.py              宏景人力get_org_tree-sql注入
-jindieyun_ScpSupRegHandler_uploadfile.py               金蝶云星空管理中心_ScpSupRegHandler任意文件上传
+hongjing_app_check_in-get_org_tree-sql.py              宏景人力get_org_tree-sql注入漏洞
+jindieyun_ScpSupRegHandler_uploadfile.py               金蝶云星空管理中心_ScpSupRegHandler任意文件上传漏洞
 shikongzhiyou_formservice_uploadfile.py                时空智友企业流程化管控系统_formservice_文件上传漏洞
 宏景人力_servlet-codesettree_sql注入.py                宏景人力_servlet-codesettree_sql注入漏洞
-landray_oa_sysuicomponent_file_upload.py               蓝凌OA sysUiComponent 前台任意文件上传
-shikong_Login_Any_file_read.py                         时空智友_Login任意文件读取
+landray_oa_sysuicomponent_file_upload.py               蓝凌OA sysUiComponent 前台任意文件上传漏洞
+shikong_Login_Any_file_read.py                         时空智友_Login任意文件读取漏洞
 wangkangrce.py                                         网康下一代防火墙远程命令执行漏洞
 wangkang_rce.yaml                                      网康下一代防火墙远程命令执行漏洞
-
+wanhu_OA_any_upload_file.py                            万户OA upload.jsp 任意文件上传漏洞
+H3C_ Network_Management_System_ Any_file_read.py       H3C网络管理系统  任意文件读取漏洞
 ```
 
