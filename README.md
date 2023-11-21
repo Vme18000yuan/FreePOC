@@ -53,5 +53,7 @@ wangkangrce.py                                         网康下一代防火墙�
 wangkang_rce.yaml                                      网康下一代防火墙远程命令执行漏洞
 wanhu_OA_any_upload_file.py                            万户OA upload.jsp 任意文件上传漏洞
 H3C_ Network_Management_System_ Any_file_read.py       H3C网络管理系统  任意文件读取漏洞
+jiecheng-CWSFinanceCommon-sqli.yaml                    捷诚管理信息系统 CWSFinanceCommon.asmx SQL注入漏洞
+jiecheng-CWSFinanceCommon-sqli.py                      捷诚管理信息系统 CWSFinanceCommon.asmx SQL注入漏洞
 ```
 
