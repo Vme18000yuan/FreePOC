@@ -56,5 +56,8 @@ H3C_ Network_Management_System_ Any_file_read.py       H3C网络管理系统  �
 jiecheng-CWSFinanceCommon-sqli.yaml                    捷诚管理信息系统 CWSFinanceCommon.asmx SQL注入漏洞
 jiecheng-CWSFinanceCommon-sqli.py                      捷诚管理信息系统 CWSFinanceCommon.asmx SQL注入漏洞
 array_vpn_fileread.py                                  Array VPN 任意文件读取漏洞
+enjoyIT_CWSFinanceCommon_SQL.py                        昂捷商业连锁管理信息系统CWSFinanceCommon接口SQL注入漏洞
+enjoyIT_CWSHr_SQL.py                                   昂捷商业连锁管理信息系统CWSHr接口SQL注入漏洞
+enjoyIT_cwsoa_SQL.py                                   昂捷商业连锁管理信息系统cwsoa接口SQL注入漏洞
 ```
 
