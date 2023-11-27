@@ -59,5 +59,6 @@ array_vpn_fileread.py                                  Array VPN 任意文件读
 enjoyIT_CWSFinanceCommon_SQL.py                        昂捷商业连锁管理信息系统CWSFinanceCommon接口SQL注入漏洞
 enjoyIT_CWSHr_SQL.py                                   昂捷商业连锁管理信息系统CWSHr接口SQL注入漏洞
 enjoyIT_cwsoa_SQL.py                                   昂捷商业连锁管理信息系统cwsoa接口SQL注入漏洞
+huawei-auth-http-readfile.py                           华为Auth-http Server任意文件读取漏洞
 ```
 
