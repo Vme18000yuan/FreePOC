@@ -60,5 +60,8 @@ enjoyIT_CWSFinanceCommon_SQL.py                        昂捷商业连锁管理�
 enjoyIT_CWSHr_SQL.py                                   昂捷商业连锁管理信息系统CWSHr接口SQL注入漏洞
 enjoyIT_cwsoa_SQL.py                                   昂捷商业连锁管理信息系统cwsoa接口SQL注入漏洞
 huawei-auth-http-readfile.py                           华为Auth-http Server任意文件读取漏洞
+dahua-zhyq-deleteftp-rce.py                            大华智慧园区综合管理平台deleteFtp接口远程命令执行
+newcapec-CampusMobileServiceManagementPlatform-RCE.py      新开普掌上校园服务管理平台service.action远程命令执行漏洞
+NC_Cloud_word_fileRead.py                                  用友NC Cloud word任意文件读取
 ```
 
