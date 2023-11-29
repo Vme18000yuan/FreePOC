@@ -65,6 +65,6 @@ dahua-zhyq-deleteftp-rce.yaml                          大华智慧园区综合�
 newcapec-CampusMobileServiceManagementPlatform-RCE.py      新开普掌上校园服务管理平台service.action远程命令执行漏洞
 newcapec-CampusMobileServiceManagementPlatform-RCE.yaml     新开普掌上校园服务管理平台service.action远程命令执行漏洞
 NC_Cloud_word_fileRead.py                                  用友NC Cloud word任意文件读取
-                        
+dahua_zhyq_attachment_fileread.py                          大华智慧园区综合管理平台attachment_downloadByUrlAtt接口任意文件读取漏洞
 ```
 
