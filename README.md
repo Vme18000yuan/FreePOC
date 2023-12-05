@@ -68,5 +68,8 @@ NC_Cloud_word_fileRead.py                                  用友NC Cloud word�
 dahua_zhyq_attachment_fileread.py                          大华智慧园区综合管理平台attachment_downloadByUrlAtt接口任意文件读取漏洞
 tongda_down_infoleek.py                                    通达OA inc/package/down.php接口未授权访问漏洞
 ezoffice_wpsservlet_upload.py                              万户协同办公平台ezoffice wpsservlet接口任意文件上传漏洞
+anwang-ac-info.yaml                                        安网智能AC管理系统actpt_5g.data存在信息漏洞
+hongfanOA_iorepsavexml_upload.py                           红帆OA iorepsavexml.aspx文件上传漏洞
+
 ```
 
