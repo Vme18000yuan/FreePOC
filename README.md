@@ -70,6 +70,7 @@ tongda_down_infoleek.py                                    通达OA inc/package/
 ezoffice_wpsservlet_upload.py                              万户协同办公平台ezoffice wpsservlet接口任意文件上传漏洞
 anwang-ac-info.yaml                                        安网智能AC管理系统actpt_5g.data存在信息漏洞
 hongfanOA_iorepsavexml_upload.py                           红帆OA iorepsavexml.aspx文件上传漏洞
-
+security_products_rce.py                                   多个厂商安全设备远程命令执行漏洞
+security_products_rce.yaml                                 多个厂商安全设备远程命令执行漏洞
 ```
 
