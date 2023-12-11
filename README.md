@@ -72,5 +72,7 @@ anwang-ac-info.yaml                                        安网智能AC管理�
 hongfanOA_iorepsavexml_upload.py                           红帆OA iorepsavexml.aspx文件上传漏洞
 security_products_rce.py                                   多个厂商安全设备远程命令执行漏洞
 security_products_rce.yaml                                 多个厂商安全设备远程命令执行漏洞
+sudaruanjian_upload.py                                     速达进存销管理系统任意文件上传漏洞
+sudaruanjian_upload.yaml                                   速达进存销管理系统任意文件上传漏洞
 ```
 
