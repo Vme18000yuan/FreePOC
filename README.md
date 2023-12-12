@@ -74,5 +74,6 @@ security_products_rce.py                                   多个厂商安全设
 security_products_rce.yaml                                 多个厂商安全设备远程命令执行漏洞
 sudaruanjian_upload.py                                     速达进存销管理系统任意文件上传漏洞
 sudaruanjian_upload.yaml                                   速达进存销管理系统任意文件上传漏洞
+secworld_info_leek.yaml                                    网神防火墙账号信息泄露漏洞
 ```
 
