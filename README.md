@@ -1,5 +1,5 @@
 # FreePOC
-#### [网络安全经历了前几年疯狂的发展，这两年似乎进入了冷静期，之前一些活跃的大佬也不在活跃。最开始学安全时候大家都喜欢分享，现在分享的人越来越少了，github上POC分享项目也逐渐不更新了。故创建此项目， 收集网上公开漏洞，并编写成yaml,python](https://github.com/Vme18000yuan/FreePOC#网络安全经历了前几年疯狂的发展这两年似乎进入了冷静期之前一些活跃的大佬也不在活跃最开始学安全时候大家都喜欢分享现在分享的人越来越少了github上poc分享项目也逐渐不更新了故创建此项目收集网上公开漏洞并编写成yamlpython),省去大家日常渗透工作中收集有效POC的时间。
+#### 最开始学安全时候大家都喜欢分享，现在分享的人越来越少了，github上POC分享项目也逐渐不更新了。故创建此项目， 收集网上公开漏洞，并编写成yaml,python](https://github.com/Vme18000yuan/FreePOC#网络安全经历了前几年疯狂的发展这两年似乎进入了冷静期之前一些活跃的大佬也不在活跃最开始学安全时候大家都喜欢分享现在分享的人越来越少了github上poc分享项目也逐渐不更新了故创建此项目收集网上公开漏洞并编写成yamlpython),省去大家日常渗透工作中收集有效POC的时间。
 <br>
 部分POC使用时候需要安装 poc_tool<br>
 `pip install poc_tool`
@@ -75,5 +75,6 @@ security_products_rce.yaml                                 多个厂商安全设
 sudaruanjian_upload.py                                     速达进存销管理系统任意文件上传漏洞
 sudaruanjian_upload.yaml                                   速达进存销管理系统任意文件上传漏洞
 secworld_info_leek.yaml                                    网神防火墙账号信息泄露漏洞
+e-bridge-SQL.py                                            泛微云桥 e-Bridge SQL注入
 ```
 
