@@ -76,5 +76,7 @@ sudaruanjian_upload.py                                     速达进存销管理
 sudaruanjian_upload.yaml                                   速达进存销管理系统任意文件上传漏洞
 secworld_info_leek.yaml                                    网神防火墙账号信息泄露漏洞
 e-bridge-SQL.py                                            泛微云桥 e-Bridge SQL注入
+aoweiya-VideoCover-upload.py                               奥威亚视屏云平台VideoCover任意文件上传
+aoweiya-VideoCover-upload.yaml                             奥威亚视屏云平台VideoCover任意文件上传
 ```
 
