@@ -78,5 +78,7 @@ secworld_info_leek.yaml                                    网神防火墙账号
 e-bridge-SQL.py                                            泛微云桥 e-Bridge SQL注入
 aoweiya-VideoCover-upload.py                               奥威亚视屏云平台VideoCover任意文件上传
 aoweiya-VideoCover-upload.yaml                             奥威亚视屏云平台VideoCover任意文件上传
+yunshikongERP_upload.py                                    云时空社会化商业ERP系统任意文件上传漏洞
+yongyou_u8crm_readfile.py                                  用友U8 CRM系统help2 任意文件读取漏洞
 ```
 
