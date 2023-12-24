@@ -81,5 +81,7 @@ aoweiya-VideoCover-upload.yaml                             奥威亚视屏云平
 yunshikongERP_upload.py                                    云时空社会化商业ERP系统任意文件上传漏洞
 yongyou_u8crm_readfile.py                                  用友U8 CRM系统help2 任意文件读取漏洞
 I-DocView-readfile.py                                      I Doc View在线文档预览系统任意文件读取漏洞
+e-cology-xmlrpcservlet-fileread.py                         泛微OA xmlrpcServlet接口任意文件读取漏洞
+weaver-ecology-XmlRpcServlet-FileRead                      泛微OA xmlrpcServlet接口任意文件读取漏洞
 ```
 
