@@ -1,5 +1,5 @@
 # FreePOC
-#### 最开始学安全时候大家都喜欢分享，现在分享的人越来越少了，github上POC分享项目也逐渐不更新了。故创建此项目， 收集网上公开漏洞，并编写成yaml,python](https://github.com/Vme18000yuan/FreePOC#网络安全经历了前几年疯狂的发展这两年似乎进入了冷静期之前一些活跃的大佬也不在活跃最开始学安全时候大家都喜欢分享现在分享的人越来越少了github上poc分享项目也逐渐不更新了故创建此项目收集网上公开漏洞并编写成yamlpython),省去大家日常渗透工作中收集有效POC的时间。
+####  收集网上公开漏洞，并编写成yaml,python脚本,省去大家日常渗透工作中收集有效POC的时间。
 <br>
 部分POC使用时候需要安装 poc_tool<br>
 `pip install poc_tool`
@@ -86,5 +86,6 @@ weaver-ecology-XmlRpcServlet-FileRead                      泛微OA xmlrpcServle
 dahua_dss_itcBulletin-sqli.yaml                            大华DSS itcBulletin SQL注入漏洞
 dahua-dss-itcBulletin-sqli.py                              大华DSS itcBulletin SQL注入漏洞
 idocview_cmd_json_cmd_exec.py                              I Doc View在线文档预览系统 cmd.json 远程命令执行
+hikvision_gateway_fileread.py                              海康威视安全接入网关任意文件读取漏洞
 ```
 
