@@ -90,5 +90,7 @@ hikvision_gateway_fileread.py                              海康威视安全接
 yongyou-nc-cloud-soapformat-xxe.py                         用友NC Cloud soapFormat.ajax接口XXE漏洞
 topsec-maincgi-cookie-rce.py                               天融信TOPSEC Cookie 远程命令执行漏洞
 topsec-maincgi-cookie-rce.yaml                              天融信TOPSEC Cookie 远程命令执行漏洞
+OfficeWeb365_Pic_Indexs_fileread.yaml                       Office Web 365 任意文件读取漏洞
+OfficeWeb365_Pic_Indexs_fileread.py                         Office Web 365 任意文件读取漏洞
 ```
 
