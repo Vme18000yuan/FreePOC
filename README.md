@@ -88,5 +88,7 @@ dahua-dss-itcBulletin-sqli.py                              大华DSS itcBulletin
 idocview_cmd_json_cmd_exec.py                              I Doc View在线文档预览系统 cmd.json 远程命令执行
 hikvision_gateway_fileread.py                              海康威视安全接入网关任意文件读取漏洞
 yongyou-nc-cloud-soapformat-xxe.py                         用友NC Cloud soapFormat.ajax接口XXE漏洞
+topsec-maincgi-cookie-rce.py                               天融信TOPSEC Cookie 远程命令执行漏洞
+topsec-maincgi-cookie-rce.yaml                              天融信TOPSEC Cookie 远程命令执行漏洞
 ```
 
