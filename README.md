@@ -93,5 +93,6 @@ topsec-maincgi-cookie-rce.yaml                              天融信TOPSEC Cook
 OfficeWeb365_Pic_Indexs_fileread.yaml                       Office Web 365 任意文件读取漏洞
 OfficeWeb365_Pic_Indexs_fileread.py                         Office Web 365 任意文件读取漏洞
 transense_ajax_sql.py                                       全程云OA SQL注入漏洞
+wavlink-rce-all.yaml                                        睿因科技-wavlink-路由器前台远程命令执行漏洞
 ```
 
