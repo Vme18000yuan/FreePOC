@@ -9,11 +9,11 @@ pip install pocsuite3<br>
 <br>
 pocsuite使用 <br>
 批量验证，将url写到一个txt <br>
-pocsuite3 -r test/poc_example.py -f url.txt --verify <br>
+pocsuite -r test/poc_example.py -f url.txt --verify <br>
 加载 tests 目录下的所有 PoC 对目标进行测试（可以充当扫描器角色）<br>
-pocsuite3 -r tests/ -u http://www.example.com --verify<br>
+pocsuite -r tests/ -u http://www.example.com --verify<br>
 使用多线程，默认线程数为1<br>
-pocsuite3 -r test/ -f url.txt --verify --threads 10 <br>
+pocsuite -r test/ -f url.txt --verify --threads 10 <br>
 
 本项目免费，因工作繁忙POC收集难免会不及时欢迎大家一起提交POC, 提交POC发送邮件至 hackersolder8848@gmail.com ，提交5个以上POC将获得免费fofa数据导出服务（可绕过1W条导出限制）
 
