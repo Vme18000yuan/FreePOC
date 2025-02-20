@@ -2,17 +2,17 @@
 ####  收集网上公开漏洞，并编写成yaml,python脚本,省去大家日常渗透工作中收集有效POC的时间。
 <br>
 主要是使用python pocsuite3 框架。使用前请按照必要的模块<br>
-pip install poc_tool
-pip install requests
-pip install pocsuite3
+pip install poc_tool<br>
+pip install requests<br>
+pip install pocsuite3<br>
 <br>
 pocsuite使用 <br>
-批量验证，将url写到一个txt
-pocsuite3 -r test/poc_example.py -f url.txt --verify
-加载 tests 目录下的所有 PoC 对目标进行测试（可以充当扫描器角色）
-pocsuite3 -r tests/ -u http://www.example.com --verify
-使用多线程，默认线程数为1
-pocsuite3 -r test/ -f url.txt --verify --threads 10
+批量验证，将url写到一个txt <br>
+pocsuite3 -r test/poc_example.py -f url.txt --verify <br>
+加载 tests 目录下的所有 PoC 对目标进行测试（可以充当扫描器角色）<br>
+pocsuite3 -r tests/ -u http://www.example.com --verify<br>
+使用多线程，默认线程数为1<br>
+pocsuite3 -r test/ -f url.txt --verify --threads 10 <br>
 
 本项目免费，因工作繁忙POC收集难免会不及时欢迎大家一起提交POC, 提交POC发送邮件至 hackersolder8848@gmail.com ，提交5个以上POC将获得免费fofa数据导出服务（可绕过1W条导出限制）
 
