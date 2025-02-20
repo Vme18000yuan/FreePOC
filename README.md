@@ -104,6 +104,6 @@ OfficeWeb365_Pic_Indexs_fileread.py                         Office Web 365 任�
 transense_ajax_sql.py                                       全程云OA SQL注入漏洞
 wavlink-rce-all.yaml                                        睿因科技-wavlink-路由器前台远程命令执行漏洞
 jeews_showordownbyurl_do_file_read.py                       JEEWMS 任意文件读取
-
+e-cology9-FileDownLoadcationSQL.py                          泛微e-cology 9 FileDownLoadcation SQL注入漏洞
 ```
 
